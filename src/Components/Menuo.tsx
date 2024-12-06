@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 export default function PositionedMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -17,12 +17,15 @@ export default function PositionedMenu() {
     <div>
       <Button
         id="demo-positioned-button"
-        aria-controls={open ? 'demo-positioned-menu' : undefined}
+        aria-controls={open ? "demo-positioned-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Menu
+        <img
+          src={require("../Images/produto.png")}
+          style={{ height: "70px", width: "70px" }}
+        ></img>
       </Button>
       <Menu
         id="demo-positioned-menu"
@@ -31,12 +34,12 @@ export default function PositionedMenu() {
         open={open}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: "bottom",
+          horizontal: "left",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         }}
       >
         <MenuItem onClick={handleClose}>Perfil</MenuItem>
