@@ -13,7 +13,7 @@ export const fetchProducts = async (
   page: number = 0,
   pageSize: number = 10,
   query: string = ""
-): Promise<{ data: Produt[]; nextCursor: number | null }> => {
+): Promise<{ data: Produt[]; nextPage: number | null }> => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const filteredProducts = all_products.filter((all_products) =>
@@ -25,7 +25,7 @@ export const fetchProducts = async (
 
   const paginatedProducts = filteredProducts.slice(start, end);
 
-  const nextCursor = end < filteredProducts.length ? page + 1 : null;
+  const nextPage = end < filteredProducts.length ? page + 1 : null;
 
-  return { data: paginatedProducts, nextCursor };
+  return { data: paginatedProducts, nextPage };
 };
