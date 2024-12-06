@@ -3,10 +3,13 @@ import {useQuery, useInfiniteQuery} from 'react-query';
 import { Card, CardContent, Typography, CardActions, MenuList, MenuItem, Button, Popper } from '@mui/material';
 import { fetchProducts } from '../backend/get_products';
 import ProductsCards from '../Components/Cards'
+import PositionedMenu from "../Components/Menuo"
 
 
 
 function Store(){
+
+  const [query, setQuery] = useState('');
 
     const {data: products, isLoading} = useQuery({
         queryFn: () => fetchProducts(),
@@ -33,23 +36,20 @@ function Store(){
         setOpen(false);
       };
 
+      const filteredProducts = products?.filter((produt) =>
+        produt.nome.toLowerCase().includes(query.toLowerCase())
+      );
+
 
     return( 
     <div className='grid gap-4'>
-         <div className='Zecs2 bg-blue-500 flex fixed left-0 right-0 justify-between text-red-500 text-5xl mt-20 p-5'>
-         <div><input/></div>
+         <div className='bg-blue-500 flex fixed left-0 right-0 justify-between text-5xl mt-20 p-5'>
+         <div><input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Nome do produto'/></div>
          <div className='bg-yellow-300 grid'>
-            <Button onClick={handleToggle}>Menu</Button>
-            <Popper open={open} anchorEl={anchorRef.current} role={undefined} placement='bottom-start' transition disablePortal>
-                <MenuList>
-                    <MenuItem>Perfil</MenuItem>
-                    <MenuItem>Settings</MenuItem>
-                    <MenuItem>Logout</MenuItem>
-                </MenuList>
-            </Popper>
+            <PositionedMenu/>
          </div>
          </div>
-         <div className='bg-red-300 flex fixed w-3/4 text-red-500 text-5xl mt-60 h-screen grid grid-cols-3 gap-1 m-5'>{products?.map((produt)=>{
+         <div className='bg-red-300 flex fixed w-3/4 text-red-500 text-5xl mt-60 h-screen grid grid-cols-3 gap-1 m-5'>{filteredProducts?.map((produt)=>{
             return <ProductsCards key={produt.id} produt={produt}/>
          })}
          </div>
