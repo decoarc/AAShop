@@ -15,9 +15,11 @@ import { fetchProducts } from "../backend/get_products";
 import ProductsCards from "../Components/Cards";
 import PositionedMenu from "../Components/Menuo";
 import ShoppingCart from "../Components/Cart";
+import { useCart } from "../backend/CartContext";
 
 function Store() {
   const navigation = useNavigate();
+  const { comprados, addProduto, total } = useCart();
   const [query, setQuery] = useState("");
 
   const {
@@ -84,15 +86,9 @@ function Store() {
       produt.nome.toLowerCase().includes(query.toLowerCase())
     );
 
-  const [comprados, setComprados] = useState<{ nome: string; preco: number }[]>(
-    []
-  );
   const handleComprar = (nome: string, preco: number) => {
-    const produtoCompra = { nome, preco };
-    setComprados((prevComprados) => [...prevComprados, produtoCompra]);
+    addProduto({ nome, preco });
   };
-
-  const total = comprados.reduce((acc, item) => acc + item.preco, 0);
 
   return (
     <div className="flex flex-col">

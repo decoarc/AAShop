@@ -11,6 +11,7 @@ import {
 import Store from "./Store/Store";
 import Gateway from "./Gateway/Gateway";
 import PositionedMenu from "./Components/Menuo";
+import { CartProvider } from "./backend/CartContext";
 
 //Não consegui colocar a imagem
 
@@ -27,12 +28,14 @@ function App() {
           </div>
         </header>
         <BrowserRouter>
-          <Routes>
-            <Route>
-              <Route path="/" element={<Store />} />
-              <Route path="gateway" element={<Gateway />} />
-            </Route>
-          </Routes>
+          <CartProvider>
+            <Routes>
+              <Route>
+                <Route path="/" element={<Store />} />
+                <Route path="gateway" element={<Gateway />} />
+              </Route>
+            </Routes>
+          </CartProvider>
         </BrowserRouter>
       </div>
     </QueryClientProvider>

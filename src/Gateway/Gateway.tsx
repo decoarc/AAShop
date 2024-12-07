@@ -1,17 +1,58 @@
-import React from 'react';
-import { Card, CardContent, Typography, CardActions, Button } from '@mui/material';
+import React from "react";
+import {
+  Card,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+  Grid,
+} from "@mui/material";
+import { useCart } from "../backend/CartContext";
+import { useNavigate } from "react-router-dom";
 
-function Gateway(){
-    return( 
-        <div>
-    <div className='Zecs2 bg-red-300 flex fixed left-0 right-0 justify-between text-red-500 text-5xl mt-20 p-5'>
-     </div>
+function Gateway() {
+  const { comprados, total, limparCarrinho } = useCart();
+  const navigation = useNavigate();
+
+  const handleSim = () => {
+    limparCarrinho();
+    navigation("/");
+  };
+
+  return (
+    <div className="h-screen flex flex-col items-center bg-gray-100 p-6">
+      <Typography variant="h4" gutterBottom>
+        Deseja finalizar sua compra?
+      </Typography>
+      <div className="w-full max-w-4xl">
+        {comprados.map((produto, index) => (
+          <Card className="shadow-lg">
+            <CardContent>
+              <Typography variant="h6">{produto.nome}</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Preço: R${produto.preco.toFixed(2)}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <div className="mt-6">
+        <Typography variant="h6">
+          Total: <span className="font-bold">R${total.toFixed(2)}</span>
+        </Typography>
+      </div>
+
+      <div className="mt-6 flex space-x-4">
+        <Button variant="contained" color="primary" onClick={handleSim}>
+          Sim
+        </Button>
+        <Button variant="outlined" color="secondary">
+          Não
+        </Button>
+      </div>
     </div>
-
-  
-
-    );
-
+  );
 }
 
 export default Gateway;
