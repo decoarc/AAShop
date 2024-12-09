@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography, Button } from "@mui/material";
-import { useCart } from "../../backend/CartContext";
+import { useCart } from "../../Contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
 function Gateway() {
@@ -13,25 +13,25 @@ function Gateway() {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center bg-[#cac4ce] p-6">
+    <div className="h-screen flex flex-col items-center bg-lightGray p-6">
       <Typography
         variant="h4"
         gutterBottom
-        className="text-center text-[#9067c6] font-bold"
+        className="text-center text-vividPurple font-bold"
       >
         Deseja finalizar sua compra?
       </Typography>
 
-      <div className="w-full max-w-4xl max-h-[400px] bg-[#8d86c9] rounded-lg p-4 overflow-y-auto shadow-lg mt-4">
+      <div className="w-full max-w-4xl max-h-[400px] bg-softPurple rounded-lg p-4 overflow-y-auto shadow-lg mt-4">
         {selecionados.length > 0 ? (
           selecionados.map((produto, index) => (
             <Card
               key={index}
-              className="mb-4 bg-[#cac4ce]"
-              style={{ border: "1px solid #8d86c9" }}
+              className="mb-4 bg-lightGray"
+              style={{ border: "1px solid softPurple" }}
             >
               <CardContent>
-                <Typography variant="h6" className="text-[#9067c6] font-bold">
+                <Typography variant="h6" className="text-vividPurple font-bold">
                   {produto.nome}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
@@ -53,7 +53,7 @@ function Gateway() {
       <div className="mt-6">
         <Typography
           variant="h6"
-          className="text-9067c6 font-bold text-lg text-center"
+          className="text-vividPurple font-bold text-lg text-center"
         >
           Total: R${total.toFixed(2)}
         </Typography>
@@ -64,7 +64,7 @@ function Gateway() {
           variant="contained"
           onClick={handleSim}
           style={{
-            backgroundColor: "#9067c6",
+            backgroundColor: "vividPurple",
             color: "#ffffff",
           }}
         >
@@ -74,8 +74,8 @@ function Gateway() {
           variant="outlined"
           onClick={() => navigation("/store")}
           style={{
-            borderColor: "#9067c6",
-            color: "#9067c6",
+            borderColor: "vividPurple",
+            color: "vividPurple",
           }}
         >
           Não

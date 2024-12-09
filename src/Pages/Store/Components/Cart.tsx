@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Card, CardContent, Button } from "@mui/material";
-import { useCart } from "../../../backend/CartContext";
+import { useCart } from "../../../Contexts/CartContext";
 
 interface ShoppingCartProps {
   produtosSelecionados: { nome: string; preco: number; quantidade: number }[];

@@ -11,7 +11,7 @@ import {
 import Store from "./Pages/Store/Store";
 import Gateway from "./Pages/Gateway/Gateway";
 import PositionedMenu from "./Components/Menuo";
-import { CartProvider } from "./backend/CartContext";
+import { CartProvider } from "./Contexts/CartContext";
 
 //Não consegui colocar a imagem
 
@@ -20,8 +20,8 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className=" flex flex-col bg-[#cac4ce] h-screen w-full">
-        <header className="bg-[#242038] flex justify-between text-[#f7ece1] text-5xl mt-0 w-full h-[75px]">
+      <div className=" flex flex-col bg-lightGray h-screen w-full">
+        <header className="bg-darkPurple flex justify-between text-cream text-5xl mt-0 w-full h-[75px]">
           <div>AAShop</div>
           <div className="image">
             <PositionedMenu />

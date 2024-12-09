@@ -12,7 +12,7 @@ import { fetchProducts } from "../../backend/get_products";
 import ProductsCards from "./Components/CustomCard";
 import PositionedMenu from "../../Components/Menuo";
 import ShoppingCart from "./Components/Cart";
-import { useCart } from "../../backend/CartContext";
+import { useCart } from "../../Contexts/CartContext";
 
 function Store() {
   const navigation = useNavigate();
@@ -89,7 +89,7 @@ function Store() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-between items-center bg-[#8d86c9] p-5">
+      <div className="flex justify-between items-center bg-softPurple p-5">
         <div>
           <TextField
             value={query}
@@ -98,7 +98,7 @@ function Store() {
             variant="outlined"
             fullWidth
             InputProps={{
-              style: { backgroundColor: "#cac4ce" },
+              style: { backgroundColor: "lightGray" },
             }}
           />
         </div>
@@ -117,7 +117,7 @@ function Store() {
           {isLoading && <p>Carregando ...</p>}
           <div ref={observerRef} style={{ height: "1px" }} />
         </div>
-        <div className="bg-[#9067c6] w-[300px] rounded-lg p-4 text-white">
+        <div className="bg-vividPurple w-[300px] rounded-lg p-4 text-white">
           <div style={{ maxHeight: "400px", overflowY: "auto" }}>
             <ShoppingCart produtosSelecionados={selecionados} />
           </div>
@@ -127,7 +127,7 @@ function Store() {
               fullWidth
               variant="contained"
               style={{
-                backgroundColor: "#8d86c9",
+                backgroundColor: "softPurple",
                 color: "#ffffff",
                 marginTop: "10px",
               }}
