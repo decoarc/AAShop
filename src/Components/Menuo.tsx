@@ -23,8 +23,8 @@ export default function PositionedMenu() {
         onClick={handleClick}
       >
         <img
-          src={require("../Images/produto.png")}
-          style={{ height: "70px", width: "70px" }}
+          src={require("../assets/Menu.png")}
+          style={{ height: "50px", width: "50px" }}
         ></img>
       </Button>
       <Menu

@@ -20,8 +20,8 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className=" flex flex-col bg-yellow-500 h-screen w-full">
-        <header className="bg-green-500 flex justify-between text-red-500 text-5xl mt-0 w-full h-[75px]">
+      <div className=" flex flex-col bg-[#cac4ce] h-screen w-full">
+        <header className="bg-[#242038] flex justify-between text-[#f7ece1] text-5xl mt-0 w-full h-[75px]">
           <div>AAShop</div>
           <div className="image">
             <PositionedMenu />

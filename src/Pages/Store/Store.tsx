@@ -5,14 +5,11 @@ import {
   Card,
   CardContent,
   Typography,
-  CardActions,
-  MenuList,
-  MenuItem,
   Button,
-  Popper,
+  TextField,
 } from "@mui/material";
 import { fetchProducts } from "../../backend/get_products";
-import ProductsCards from "./Components/Cards";
+import ProductsCards from "./Components/CustomCard";
 import PositionedMenu from "../../Components/Menuo";
 import ShoppingCart from "./Components/Cart";
 import { useCart } from "../../backend/CartContext";
@@ -92,19 +89,22 @@ function Store() {
 
   return (
     <div className="flex flex-col">
-      <div className="bg-blue-500 flex justify-between text-5xl p-5">
+      <div className="flex justify-between items-center bg-[#8d86c9] p-5">
         <div>
-          <input
-            type="text"
+          <TextField
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Nome do produto"
+            placeholder="Pesquisar produto"
+            variant="outlined"
+            fullWidth
+            InputProps={{
+              style: { backgroundColor: "#cac4ce" },
+            }}
           />
         </div>
-        <div className="bg-yellow-300 grid"></div>
       </div>
-      <div className="flex w-full space-x-16 mt-2">
-        <div className="bg-red-300 flex w-3/4 text-red-500 text-5xl mt-4 h-[400px] overflow-y-auto grid grid-cols-3 gap-1">
+      <div className="flex flex-wrap mt-4 px-5 space-x-4">
+        <div className="w-3/4 grid grid-cols-3 gap-4 bg-cac4ce rounded-lg p-4 overflow-y-auto max-h-[500px]">
           {filteredProducts?.map((produt) => {
             return (
               <ProductsCards
@@ -117,16 +117,21 @@ function Store() {
           {isLoading && <p>Carregando ...</p>}
           <div ref={observerRef} style={{ height: "1px" }} />
         </div>
-        <div className="bg-blue-200 w-[300px] p-4">
+        <div className="bg-[#9067c6] w-[300px] rounded-lg p-4 text-white">
           <div style={{ maxHeight: "400px", overflowY: "auto" }}>
             <ShoppingCart produtosSelecionados={selecionados} />
           </div>
-          <div>
-            <Typography> Total: R${total.toFixed(2)}</Typography>
+          <div className="mt-4">
+            <Typography variant="h6"> Total: R${total.toFixed(2)}</Typography>
             <Button
-              onClick={() => {
-                navigation("/gateway");
+              fullWidth
+              variant="contained"
+              style={{
+                backgroundColor: "#8d86c9",
+                color: "#ffffff",
+                marginTop: "10px",
               }}
+              onClick={() => navigation("/gateway")}
             >
               Finalizar
             </Button>
