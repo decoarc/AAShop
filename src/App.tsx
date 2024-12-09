@@ -8,8 +8,8 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-import Store from "./Store/Store";
-import Gateway from "./Gateway/Gateway";
+import Store from "./Pages/Store/Store";
+import Gateway from "./Pages/Gateway/Gateway";
 import PositionedMenu from "./Components/Menuo";
 import { CartProvider } from "./backend/CartContext";
 

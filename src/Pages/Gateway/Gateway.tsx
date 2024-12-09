@@ -7,11 +7,11 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import { useCart } from "../backend/CartContext";
+import { useCart } from "../../backend/CartContext";
 import { useNavigate } from "react-router-dom";
 
 function Gateway() {
-  const { comprados, total, limparCarrinho } = useCart();
+  const { selecionados, total, limparCarrinho } = useCart();
   const navigation = useNavigate();
 
   const handleSim = () => {
@@ -25,7 +25,7 @@ function Gateway() {
         Deseja finalizar sua compra?
       </Typography>
       <div className="w-full max-w-4xl">
-        {comprados.map((produto, index) => (
+        {selecionados.map((produto, index) => (
           <Card className="shadow-lg">
             <CardContent>
               <Typography variant="h6">{produto.nome}</Typography>

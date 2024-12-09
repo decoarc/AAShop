@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { useQuery, useInfiniteQuery } from "react-query";
+import { useInfiniteQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import {
   Card,
@@ -11,15 +11,15 @@ import {
   Button,
   Popper,
 } from "@mui/material";
-import { fetchProducts } from "../backend/get_products";
-import ProductsCards from "../Components/Cards";
-import PositionedMenu from "../Components/Menuo";
-import ShoppingCart from "../Components/Cart";
-import { useCart } from "../backend/CartContext";
+import { fetchProducts } from "../../backend/get_products";
+import ProductsCards from "./Components/Cards";
+import PositionedMenu from "../../Components/Menuo";
+import ShoppingCart from "./Components/Cart";
+import { useCart } from "../../backend/CartContext";
 
 function Store() {
   const navigation = useNavigate();
-  const { comprados, addProduto, total } = useCart();
+  const { selecionados, addProduto, total } = useCart();
   const [query, setQuery] = useState("");
 
   const {
@@ -87,7 +87,7 @@ function Store() {
     );
 
   const handleComprar = (nome: string, preco: number) => {
-    addProduto({ nome, preco });
+    addProduto({ nome, preco, quantidade: 1 });
   };
 
   return (
@@ -119,7 +119,7 @@ function Store() {
         </div>
         <div className="bg-blue-200 w-[300px] p-4">
           <div style={{ maxHeight: "400px", overflowY: "auto" }}>
-            <ShoppingCart produtosComprados={comprados} />
+            <ShoppingCart produtosSelecionados={selecionados} />
           </div>
           <div>
             <Typography> Total: R${total.toFixed(2)}</Typography>

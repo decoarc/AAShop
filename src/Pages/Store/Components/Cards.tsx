@@ -6,7 +6,7 @@ import {
   CardMedia,
   Button,
 } from "@mui/material";
-import { Produt } from "../backend/get_products";
+import { Produt } from "../../../backend/get_products";
 import React, { useState } from "react";
 
 interface ProdutsProps {
