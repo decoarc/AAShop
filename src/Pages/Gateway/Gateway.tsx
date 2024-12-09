@@ -72,7 +72,6 @@ function Gateway() {
         </Button>
         <Button
           variant="outlined"
-          onClick={() => navigation("/store")}
           style={{
             borderColor: "vividPurple",
             color: "vividPurple",
