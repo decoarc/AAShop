@@ -14,18 +14,15 @@ export const fetchProducts = async (
   pageSize: number = 10,
   query: string = ""
 ): Promise<{ data: Produt[]; nextPage: number | null }> => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  const filteredProducts = all_products.filter((all_products) =>
-    all_products.nome.toLowerCase().includes(query.toLowerCase())
+  const response = await fetch(
+    `http://localhost:8082/api/products?page=${page}&pageSize=${pageSize}&query=${query}`
   );
 
-  const start = page * pageSize;
-  const end = start + pageSize;
+  if (!response.ok) {
+    throw new Error("Erro ao buscar produtos");
+  }
 
-  const paginatedProducts = filteredProducts.slice(start, end);
+  const data = await response.json();
 
-  const nextPage = end < filteredProducts.length ? page + 1 : null;
-
-  return { data: paginatedProducts, nextPage };
+  return data;
 };

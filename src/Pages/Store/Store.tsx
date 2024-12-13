@@ -1,16 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useInfiniteQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Button,
-  TextField,
-} from "@mui/material";
+import { Typography, Button, TextField } from "@mui/material";
 import { fetchProducts } from "../../backend/get_products";
 import ProductsCards from "./Components/CustomCard";
-import PositionedMenu from "../../Components/Menuo";
 import ShoppingCart from "./Components/Cart";
 import { useCart } from "../../Contexts/CartContext";
 

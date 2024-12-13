@@ -1,13 +1,6 @@
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  CardMedia,
-  Button,
-} from "@mui/material";
+import { Card, Typography, CardMedia, Button } from "@mui/material";
 import { Produt } from "../../../backend/get_products";
-import React, { useState } from "react";
+import React from "react";
 
 interface ProdutsProps {
   produt: Produt;

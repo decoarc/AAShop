@@ -1,19 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-} from "@mui/material";
 import Store from "./Pages/Store/Store";
 import Gateway from "./Pages/Gateway/Gateway";
 import PositionedMenu from "./Components/Menuo";
 import { CartProvider } from "./Contexts/CartContext";
-
-//Não consegui colocar a imagem
 
 const queryClient = new QueryClient();
 
