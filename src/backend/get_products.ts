@@ -2,6 +2,9 @@ import products from "../produtos.json";
 
 export const all_products = products;
 
+const URL = process.env.REACT_APP_BASE_URL;
+//const URL = "http://localhost:8082";
+
 export interface Produt {
   id: number;
   nome: string;
@@ -15,7 +18,7 @@ export const fetchProducts = async (
   query: string = ""
 ): Promise<{ data: Produt[]; nextPage: number | null }> => {
   const response = await fetch(
-    `http://localhost:8082/api/products?page=${page}&pageSize=${pageSize}&query=${query}`
+    `${URL}/api/products?page=${page}&pageSize=${pageSize}&query=${query}`
   );
 
   if (!response.ok) {
