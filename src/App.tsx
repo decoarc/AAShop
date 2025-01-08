@@ -18,16 +18,14 @@ function App() {
             <PositionedMenu />
           </div>
         </header>
-        <BrowserRouter>
-          <CartProvider>
-            <Routes>
-              <Route>
-                <Route path="/" element={<Store />} />
-                <Route path="gateway" element={<Gateway />} />
-              </Route>
-            </Routes>
-          </CartProvider>
-        </BrowserRouter>
+        <CartProvider>
+          <Routes>
+            <Route>
+              <Route path="/" element={<Store />} />
+              <Route path="gateway" element={<Gateway />} />
+            </Route>
+          </Routes>
+        </CartProvider>
       </div>
     </QueryClientProvider>
   );

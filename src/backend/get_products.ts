@@ -3,7 +3,7 @@ import products from "../produtos.json";
 export const all_products = products;
 
 const URL = process.env.REACT_APP_BASE_URL;
-fetch("URL").then((response) => response.json());
+console.log("URL DO BACKEND:", URL);
 //const URL = "http://localhost:8082";
 
 export interface Produt {
