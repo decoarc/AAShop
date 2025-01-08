@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/AAShop/static/css/main.2b414613.css",
-    "main.js": "/AAShop/static/js/main.e9e74042.js",
+    "main.js": "/AAShop/static/js/main.b8cdc8f1.js",
     "index.html": "/AAShop/index.html",
     "main.2b414613.css.map": "/AAShop/static/css/main.2b414613.css.map",
-    "main.e9e74042.js.map": "/AAShop/static/js/main.e9e74042.js.map"
+    "main.b8cdc8f1.js.map": "/AAShop/static/js/main.b8cdc8f1.js.map"
   },
   "entrypoints": [
     "static/css/main.2b414613.css",
-    "static/js/main.e9e74042.js"
+    "static/js/main.b8cdc8f1.js"
   ]
 }
