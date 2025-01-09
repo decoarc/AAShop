@@ -12,9 +12,11 @@ function Store() {
   const { selecionados, addProduto, total } = useCart();
   const [query, setQuery] = useState("");
 
+  const [loadingMessage, setLoadingMessage] = useState(false);
+
   const {
     data: products,
-    isLoading,
+    isFetching,
     error,
     fetchNextPage,
     hasNextPage,
@@ -31,7 +33,11 @@ function Store() {
     (entries: IntersectionObserverEntry[]) => {
       const target = entries[0];
       if (target.isIntersecting && hasNextPage && !isFetchingNextPage) {
-        fetchNextPage();
+        setLoadingMessage(true);
+        setTimeout(() => {
+          setLoadingMessage(false);
+          fetchNextPage();
+        });
       }
     },
     [fetchNextPage, hasNextPage, isFetchingNextPage]
@@ -96,8 +102,14 @@ function Store() {
           />
         </div>
       </div>
-      <div className="flex flex-wrap mt-4 px-5 space-x-4">
-        <div className="w-3/4 grid grid-cols-3 gap-4 bg-cac4ce rounded-lg p-4 overflow-y-auto max-h-[500px]">
+      <div className="flex flex-wrap md:flex-nowrap mt-4 px-5 space-y-4 md:space-y-0 md:space-x-4">
+        <div
+          className="w-3/4 grid gap-4 bg-cac4ce rounded-lg p-4 overflow-y-auto max-h-[500px]"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          }}
+        >
           {filteredProducts?.map((produt) => {
             return (
               <ProductsCards
@@ -107,10 +119,16 @@ function Store() {
               />
             );
           })}
-          {isLoading && <p>Carregando ...</p>}
-          <div ref={observerRef} style={{ height: "1px" }} />
+          <div
+            className="mt-4 flex justify-center items-centertext-center p-4 rounded-lg"
+            ref={observerRef}
+            style={{ height: "1px", alignSelf: "center" }}
+          >
+            {" "}
+            {isFetching && <p>Carregando ...</p>}
+          </div>
         </div>
-        <div className="bg-vividPurple w-[300px] rounded-lg p-4 text-white">
+        <div className="w-full md:w-[300px] bg-vividPurple rounded-lg p-4 text-white">
           <div style={{ maxHeight: "400px", overflowY: "auto" }}>
             <ShoppingCart produtosSelecionados={selecionados} />
           </div>
