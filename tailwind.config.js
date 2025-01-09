@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Pixelify Sans", "Arial", "sans-serif"],
+      },
       colors: {
         darkPurple: "#242038",
         vividPurple: "#9067c6",
