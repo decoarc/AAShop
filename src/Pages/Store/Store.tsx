@@ -87,44 +87,49 @@ function Store() {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="flex justify-between items-center bg-softPurple p-5">
-        <div>
-          <TextField
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Pesquisar produto"
-            variant="outlined"
-            fullWidth
-            InputProps={{
-              style: { backgroundColor: "lightGray" },
-            }}
-          />
-        </div>
-      </div>
-      <div className="flex flex-wrap md:flex-nowrap mt-4 px-5 space-y-4 md:space-y-0 md:space-x-4">
-        <div
-          className="w-3/4 grid gap-4 bg-cac4ce rounded-lg p-4 overflow-y-auto max-h-[500px]"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    <div
+      className="flex flex-col overflow-hidden"
+      style={{ height: `${window.innerHeight}px` }}
+    >
+      <div className="p-5 h-[72px]">
+        <TextField
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Pesquisar produto"
+          variant="outlined"
+          fullWidth
+          InputProps={{
+            style: { backgroundColor: "lightGray" },
           }}
+        />
+      </div>
+      <div className="flex flex-nowrap mt-4 px-5">
+        <div
+          className="flex flex-col w-full overflow-scroll"
+          style={{ height: `${window.innerHeight - 200}px` }}
         >
-          {filteredProducts?.map((produt) => {
-            return (
-              <ProductsCards
-                key={produt.id}
-                produt={produt}
-                onComprar={handleComprar}
-              />
-            );
-          })}
           <div
-            className="mt-4 flex justify-center items-centertext-center p-4 rounded-lg"
-            ref={observerRef}
-            style={{ height: "1px", alignSelf: "center" }}
+            className="w-full grid gap-4 bg-cac4ce"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            }}
           >
-            {" "}
+            {filteredProducts?.map((produt) => {
+              return (
+                <ProductsCards
+                  key={produt.id}
+                  produt={produt}
+                  onComprar={handleComprar}
+                />
+              );
+            })}
+          </div>
+          <div
+            className="w-full bg-black"
+            ref={observerRef}
+            style={{ height: "1px" }}
+          >
             {isFetching && <p>Carregando ...</p>}
           </div>
         </div>
