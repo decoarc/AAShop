@@ -25,6 +25,7 @@ export default function PositionedMenu() {
         <img
           src={require("../assets/Menu.png")}
           style={{ height: "50px", width: "50px" }}
+          alt="menu"
         ></img>
       </Button>
       <Menu

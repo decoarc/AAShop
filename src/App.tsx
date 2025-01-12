@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Store from "./Pages/Store/Store";
 import Gateway from "./Pages/Gateway/Gateway";
