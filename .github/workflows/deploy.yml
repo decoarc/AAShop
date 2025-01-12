@@ -25,18 +25,26 @@ jobs:
         with:
           node-version: "20"
           cache: npm
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+
       - name: Install dependencies
         run: npm install
+
       - name: Build project
         run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./build
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: releases/v4
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
           folder: ./build
-          clean: false
+          clean: true
           single-commit: true
