@@ -71,3 +71,19 @@ code {
 .MuiFormLabel-root {
   font-family: "Pixelify Sans", Arial, sans-serif !important;
 }
+
+:root {
+  --darkPurple: #242038;
+  --vividPurple: #9067c6;
+  --softPurple: #8d86c9;
+  --lightGray: #cac4ce;
+  --cream: #f7ece1;
+}
+
+.dark {
+  --darkPurple: #1a1525;
+  --vividPurple: #6a4ca5;
+  --softPurple: #736899;
+  --lightGray: #9f98a5;
+  --cream: #e3d6c6;
+}

@@ -1,10 +1,10 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import { Button, Menu, MenuItem, Switch } from "@mui/material";
+import { useEffect } from "react";
 
 export default function PositionedMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -12,6 +12,12 @@ export default function PositionedMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  useEffect(() => {
+    document.documentElement.className = darkMode ? "dark" : "";
+  }, [darkMode]);
 
   return (
     <div>
@@ -46,6 +52,17 @@ export default function PositionedMenu() {
         <MenuItem onClick={handleClose}>Perfil</MenuItem>
         <MenuItem onClick={handleClose}>Settings</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem>
+          {" "}
+          <div className="flex items-center space-x-2">
+            <span>Dark Mode</span>
+            <Switch
+              checked={darkMode}
+              onChange={() => setDarkMode((prev) => !prev)}
+              inputProps={{ "aria-label": "controlled" }}
+            />
+          </div>{" "}
+        </MenuItem>
       </Menu>
     </div>
   );
