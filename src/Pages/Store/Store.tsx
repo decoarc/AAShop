@@ -105,11 +105,11 @@ function Store() {
       </div>
       <div className="flex flex-nowrap mt-4 px-5">
         <div
-          className="flex flex-col w-full overflow-scroll"
+          className="flex flex-col w-full overflow-scroll scrollbar-thin scrollbar-webkit"
           style={{ height: `${window.innerHeight - 200}px` }}
         >
           <div
-            className="w-full grid gap-4 bg-cac4ce"
+            className="w-full grid gap-4 bg-cac4ce "
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
