@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/AAShop/static/css/main.aa60aa77.css",
-    "main.js": "/AAShop/static/js/main.248f25ad.js",
+    "main.css": "/AAShop/static/css/main.1c29b995.css",
+    "main.js": "/AAShop/static/js/main.9aea1fc8.js",
     "static/media/PixelifySans-Regular.ttf": "/AAShop/static/media/PixelifySans-Regular.78dfe66b4f31904f6ee9.ttf",
     "static/media/PixelifySans-SemiBold.ttf": "/AAShop/static/media/PixelifySans-SemiBold.b84b59169e256e448232.ttf",
     "static/media/PixelifySans-Medium.ttf": "/AAShop/static/media/PixelifySans-Medium.a31f79da65fca72b8483.ttf",
     "static/media/PixelifySans-Bold.ttf": "/AAShop/static/media/PixelifySans-Bold.cf9b3ee7c9f1c551e244.ttf",
     "index.html": "/AAShop/index.html",
-    "main.aa60aa77.css.map": "/AAShop/static/css/main.aa60aa77.css.map",
-    "main.248f25ad.js.map": "/AAShop/static/js/main.248f25ad.js.map"
+    "main.1c29b995.css.map": "/AAShop/static/css/main.1c29b995.css.map",
+    "main.9aea1fc8.js.map": "/AAShop/static/js/main.9aea1fc8.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa60aa77.css",
-    "static/js/main.248f25ad.js"
+    "static/css/main.1c29b995.css",
+    "static/js/main.9aea1fc8.js"
   ]
 }
