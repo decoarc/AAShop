@@ -13,31 +13,34 @@ function Gateway() {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center bg-lightGray p-6">
+    <div className="h-screen flex flex-col items-center bg-lightBeige p-6">
       <Typography
         variant="h4"
         gutterBottom
-        className="text-center text-vividPurple font-bold"
+        className="text-center text-vibrantGreen font-bold"
       >
         Deseja finalizar sua compra?
       </Typography>
 
-      <div className="w-full max-w-4xl max-h-[400px] bg-softPurple rounded-lg p-4 overflow-y-auto shadow-lg mt-4">
+      <div className="w-full max-w-4xl max-h-[400px] bg-lightYellow rounded-lg p-4 overflow-y-auto shadow-lg mt-4">
         {selecionados.length > 0 ? (
           selecionados.map((produto, index) => (
             <Card
               key={index}
-              className="mb-4 bg-lightGray"
-              style={{ border: "1px solid softPurple" }}
+              className="mb-4 bg-lightBeige"
+              style={{ border: "1px solid lightYellow" }}
             >
-              <CardContent>
-                <Typography variant="h6" className="text-vividPurple font-bold">
+              <CardContent className="bg-back text-text">
+                <Typography
+                  variant="h6"
+                  className="text-vibrantGreen font-bold"
+                >
                   {produto.nome}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" className=" text-text">
                   Preço: R${produto.preco.toFixed(2)}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" className=" text-text">
                   Quantidade: {produto.quantidade}
                 </Typography>
               </CardContent>
@@ -53,7 +56,7 @@ function Gateway() {
       <div className="mt-6">
         <Typography
           variant="h6"
-          className="text-vividPurple font-bold text-lg text-center"
+          className="text-vibrantGreen font-bold text-lg text-center"
         >
           Total: R${total.toFixed(2)}
         </Typography>
@@ -64,7 +67,7 @@ function Gateway() {
           variant="contained"
           onClick={handleSim}
           style={{
-            backgroundColor: "vividPurple",
+            backgroundColor: "vibrantGreen",
             color: "#ffffff",
           }}
         >
@@ -73,8 +76,8 @@ function Gateway() {
         <Button
           variant="outlined"
           style={{
-            borderColor: "vividPurple",
-            color: "vividPurple",
+            borderColor: "vibrantGreen",
+            color: "vibrantGreen",
           }}
         >
           Não

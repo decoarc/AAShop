@@ -99,7 +99,7 @@ function Store() {
           variant="outlined"
           fullWidth
           InputProps={{
-            style: { backgroundColor: "lightGray" },
+            style: { backgroundColor: "lightBeige" },
           }}
         />
       </div>
@@ -133,7 +133,7 @@ function Store() {
             {isFetching && <p>Carregando ...</p>}
           </div>
         </div>
-        <div className="w-full md:w-[300px] bg-vividPurple rounded-lg p-4 text-white">
+        <div className="w-full md:w-[300px] bg-darkGreen rounded-lg p-4 text-white">
           <div style={{ maxHeight: "400px", overflowY: "auto" }}>
             <ShoppingCart produtosSelecionados={selecionados} />
           </div>
@@ -142,11 +142,6 @@ function Store() {
             <Button
               fullWidth
               variant="contained"
-              style={{
-                backgroundColor: "softPurple",
-                color: "#ffffff",
-                marginTop: "10px",
-              }}
               onClick={() => navigation("/gateway")}
             >
               Finalizar

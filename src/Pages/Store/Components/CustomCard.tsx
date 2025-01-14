@@ -18,7 +18,7 @@ interface ProdutsProps {
 function ProductsCards({ produt, onComprar }: ProdutsProps) {
   return (
     <Card style={{ width: 300, height: 200, minWidth: 300, minHeight: 200 }}>
-      <CardContent className="bg-darkPurple text-white">
+      <CardContent className="bg-darkGreen text-text">
         <Box display="flex" flexDirection="row" alignItems="center">
           <CardMedia
             component="img"
@@ -33,7 +33,7 @@ function ProductsCards({ produt, onComprar }: ProdutsProps) {
 
       <Divider />
 
-      <CardContent>
+      <CardContent className="bg-back text-text">
         <Typography gutterBottom fontSize={12}>
           {produt.descricao}
         </Typography>

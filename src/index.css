@@ -73,17 +73,21 @@ code {
 }
 
 :root {
-  --darkPurple: #242038;
-  --vividPurple: #9067c6;
-  --softPurple: #8d86c9;
-  --lightGray: #cac4ce;
-  --cream: #f7ece1;
+  --darkGreen: #149c68;
+  --vibrantGreen: #38c958;
+  --lightYellow: #aee637;
+  --lightBeige: #fffedb;
+  --mediumBeige: #d1b29d;
+  --back: #fcfcf2;
+  --text: black;
 }
 
 .dark {
-  --darkPurple: #1a1525;
-  --vividPurple: #6a4ca5;
-  --softPurple: #736899;
-  --lightGray: #9f98a5;
-  --cream: #e3d6c6;
+  --darkGreen: #0f7a4d;
+  --vibrantGreen: #2faf70;
+  --lightYellow: #2faf70;
+  --lightBeige: #b0a08e;
+  --mediumBeige: #9a8a6b;
+  --back: #212120;
+  --text: white;
 }

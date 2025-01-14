@@ -7,11 +7,13 @@ module.exports = {
         sans: ["Pixelify Sans", "Arial", "sans-serif"],
       },
       colors: {
-        darkPurple: "var(--darkPurple)",
-        vividPurple: "var(--vividPurple)",
-        softPurple: "var(--softPurple)",
-        lightGray: "var(--lightGray)",
-        cream: "var(--cream)",
+        darkGreen: "var(--darkGreen)",
+        vibrantGreen: "var(--vibrantGreen)",
+        lightYellow: "var(--lightYellow)",
+        lightBeige: "var(--lightBeige)",
+        mediumBeige: "var(--mediumBeige)",
+        back: "var(--back)",
+        text: "var(--text)",
       },
     },
   },
@@ -20,19 +22,19 @@ module.exports = {
       const newUtilities = {
         ".scrollbar-thin": {
           scrollbarWidth: "thin",
-          scrollbarColor: "var(--darkPurple) var(--vividPurple)",
+          scrollbarColor: "var(--darkGreen) transparent",
         },
         ".scrollbar-webkit": {
           "&::-webkit-scrollbar": {
-            width: "6px",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "var(--darkPurple)",
-            borderRadius: "10px",
-            border: "3px solid var(--lightGray)",
+            width: "8px",
           },
           "&::-webkit-scrollbar-track": {
-            backgroundColor: "var(--lightGray)",
+            backgroundColor: "white",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "transparent",
+            borderRadius: "20px",
+            border: "1px solid var(--lightBeige)",
           },
         },
       };
