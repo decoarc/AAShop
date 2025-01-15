@@ -105,7 +105,7 @@ function Store() {
       </div>
       <div className="flex flex-nowrap mt-4 px-5">
         <div
-          className="flex flex-col w-full overflow-scroll scrollbar-thin scrollbar-webkit"
+          className="flex flex-col w-full overflow-y-scroll scrollbar-webkit"
           style={{ height: `${window.innerHeight - 200}px` }}
         >
           <div

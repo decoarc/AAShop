@@ -20,19 +20,16 @@ module.exports = {
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
-        ".scrollbar-thin": {
-          scrollbarWidth: "thin",
-          scrollbarColor: "var(--darkGreen) transparent",
-        },
         ".scrollbar-webkit": {
           "&::-webkit-scrollbar": {
             width: "8px",
           },
           "&::-webkit-scrollbar-track": {
-            backgroundColor: "white",
+            backgroundColor: "var(--lightBeige)",
           },
           "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "transparent",
+            backgroundColor: "var(--vibrantGreen)",
+            width: "20px",
             borderRadius: "20px",
             border: "1px solid var(--lightBeige)",
           },
