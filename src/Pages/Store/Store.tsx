@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useInfiniteQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { Typography, Button, TextField } from "@mui/material";
+import { Typography, Button, TextField, CircularProgress } from "@mui/material";
 import { fetchProducts } from "../../backend/get_products";
 import ProductsCards from "./Components/CustomCard";
 import ShoppingCart from "./Components/Cart";
@@ -130,7 +130,11 @@ function Store() {
             ref={observerRef}
             style={{ height: "1px" }}
           >
-            {isFetching && <p>Carregando ...</p>}
+            {isFetching && (
+              <div className="flex justify-center items-center">
+                <CircularProgress size={24} />
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full md:w-[300px] bg-darkGreen rounded-lg p-4 text-white">
